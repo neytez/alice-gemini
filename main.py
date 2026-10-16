@@ -19,7 +19,7 @@ def webhook():
     if not user_text:
         return jsonify({
             "response": {
-                "text": "Чем могу помочь?",
+                "text": "Привет! Я агент Gemini. Чем могу помочь?",
                 "end_session": False
             },
             "version": "1.0"
