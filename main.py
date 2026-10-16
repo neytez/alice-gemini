@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Читаем ключ из системных переменных
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-pro')
 
 @app.route('/', methods=['POST'])
 def webhook():
@@ -19,7 +19,7 @@ def webhook():
     if not user_text:
         return jsonify({
             "response": {
-                "text": "Привет! Я агент Gemini. Чем могу помочь?",
+                "text": "Чем могу помочь?",
                 "end_session": False
             },
             "version": "1.0"
