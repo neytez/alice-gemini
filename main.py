@@ -30,6 +30,7 @@ def webhook():
         res = model.generate_content(user_text)
         reply = res.text
     except Exception as e:
+        print(f"ОШИБКА GEMINI: {e}")
         reply = "Произошла ошибка при обращении к нейросети."
 
     return jsonify({
